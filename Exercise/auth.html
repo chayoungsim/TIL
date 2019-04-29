@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>실습1</title>
+</head>
+<body>
+
+   
+  
+  <script>
+
+   /*
+    function auth(id,pw){
+      const TEST_ID="sim";
+      const TEST_PW="1234";
+     
+      if(id==null && pw==null){  // or로 할 2번 문구만 나옴..
+        return "정보를 입력하세요."
+      }    
+      if(typeof id !== 'string'){
+        return "올바른 정보를 입력하세요"
+      }
+      if(!pw){
+        return "비밀번호가 없습니다."
+      }
+      if(TEST_ID===id && TEST_PW===pw){
+        return "성공"
+      } else{
+        return "정보가 일치하지 않습니다."
+      }  
+    }
+   */
+
+
+function auth(id,pw){
+  const TEST_ID="sim";
+  const TEST_PW="1234"
+  const IS_INFO_NULL = (id==null && pw==null);
+  const IS_ID_TYPE = (typeof id !== 'string');
+  const IS_NOT_PW =!pw
+  const IS_INFO = (TEST_ID===id && TEST_PW===pw);
+
+ msg = {
+    INFO_NULL :"정보를 입력하세요.",
+    ID_TYPE :"올바른 정보를 입력하세요.",
+    NOT_PW : "비밀번호가 없습니다.",
+    INFO :"성공",
+    NOT_INFO :"정보가 일치 하지 않습니다."
+  }
+  if(IS_INFO_NULL) return msg.INFO_NULL;
+  if(IS_ID_TYPE) return msg.ID_TYPE;
+  if(IS_NOT_PW) return msg.NOT_PW;
+  return IS_INFO ?  msg.INFO :  msg.NOT_INFO;
+}
+
+
+console.log('1.정보를 입력하세요==', auth());
+console.log('2.올바른 정보를 입력하세요 ==',auth([1,2,3,4]));
+console.log('3.비밀번호가 없습니다.==',auth("sim"));
+console.log('4.성공 ==', auth('sim','1234'));
+console.log('5.정보가 일치하지 않습니다.==',auth('sim','12345'));
+console.log('5.정보가 일치하지 않습니다.==',auth('simsim','1234'));
+console.log('5.정보가 일치하지 않습니다.==',auth('simsim','12341234'));
+
+
+</script>
+</body>
+</html>

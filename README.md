@@ -8,10 +8,3 @@ https://guides.github.com/features/mastering-markdown/
 
 And if you'd like to use syntax highlighting, include the language:
 
-```javascript
-function fancyAlert(arg) {
-  if(arg) {
-    $.facebox({div:'#foo'})
-  }
-}
-``` 

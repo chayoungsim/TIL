@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Clock</title>
+  <link href="https://fonts.googleapis.com/css?family=Anton|Nanum+Gothic" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0}
+    html,body{
+      height:100%;
+      font-family: 'Anton', sans-serif;
+    }
+    .clock{
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:5rem;
+      flex-wrap:wrap;
+    }
+    .clock>div{
+      width:100%;
+      text-align:center;
+    }
+    .clock2{
+      font-family: 'Nanum Gothic', sans-serif;
+    }
+    .clock2 .times{
+      font-size:2.5rem;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="clock">
+    <div class="clock1"></div>  
+    <div class="clock2">
+        <span class="times">am</span><span class="hour">00</span>:<span class="minute">00</span>:<span class="second">00</span>
+    </div>
+  </div>
+  
+
+  <script>
+
+  function getTime(){
+    const date= new Date();
+    const hour=date.getHours();
+    const minute = date.getMinutes();
+    const second = date.getSeconds();
+   
+    const clocks=document.querySelector('.clock1'); 
+    clocks.innerHTML=`${hour} : ${minute} : ${ second}`
+
+    /*0 을 포함*/
+    const hourSet = document.querySelector('.hour');
+    const minuteSet = document.querySelector('.minute');
+    const secondSet = document.querySelector('.second');
+     hourSet.innerHTML=`${hour < 10 ?`0${hour}` : hour}`
+     minuteSet.innerHTML=`${minute<10 ?`0${minute}` : minute}`
+     secondSet.innerHTML=`${second <10 ? `0${second}` : second}`
+
+     const times = document.querySelector('.times');
+     if(hour<12){
+       times.innerHTML="오전"
+     } else{
+       times.innerHTML="오후"
+     }
+     
+     if(hour>12){
+       const newHour= hour-12;
+       hourSet.innerHTML=`${newHour < 10 ?`0${newHour}` : newHour}`
+     } 
+
+  }  
+  function init(){
+    getTime();
+    setInterval(getTime,1000);
+  }
+  init();
+  </script>
+</body>
+</html>
