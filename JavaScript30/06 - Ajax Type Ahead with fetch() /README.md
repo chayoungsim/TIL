@@ -42,4 +42,10 @@
 * 이벤트 참조 https://developer.mozilla.org/ko/docs/Web/Events
 
 ### join() 메서드는 배열의 모든 요소를 연결해 하나의 문자열로 만듭니다.
+```javascript
+  const arr=['apple','banana','mango'];
+  console.log(arr.join()) //apple,banana,mango
+  console.log(arr.join('')) //applebanana,mango
+  console.log(arr.join('-')) // apple-banana-mango
+```
 
