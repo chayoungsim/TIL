@@ -7,8 +7,8 @@
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.log(error))
-
 ```
+* blob :Blob 객체는 파일과 흡사한 불변 객체로 raw data입니다. 데이터를 표현하기 때문에 필연적으로 자바스크립트 네이티브 포맷이 아닙니다. 
 
 ### push  - 배열의 끝에 하나 이상의 요소를 추가하고, 배열의 새로운 길이를 반환한다.
 ```javascript
@@ -40,4 +40,6 @@
 
 ### addEventListener
 * 이벤트 참조 https://developer.mozilla.org/ko/docs/Web/Events
+
+### join() 메서드는 배열의 모든 요소를 연결해 하나의 문자열로 만듭니다.
 
