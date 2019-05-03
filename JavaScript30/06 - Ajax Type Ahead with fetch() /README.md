@@ -45,7 +45,7 @@
 ```javascript
   const arr=['apple','banana','mango'];
   console.log(arr.join()) //apple,banana,mango
-  console.log(arr.join('')) //applebanana,mango
+  console.log(arr.join('')) //applebananamango
   console.log(arr.join('-')) // apple-banana-mango
 ```
 
