@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+
+
+ //var num =10;
+
+ var counter = {
+  num:10, 
+  increment:function(n){
+//     if(n){
+//       this.num=this.num+n;
+//     } else{
+//       this.num=this.num+1;
+//     }
+    
+    n = typeof n!== 'undefined' ? this.num=this.num+n: this.num=this.num+1;
+    
+  },
+  decrement:function(){
+    this.num=this.num-1;
+  },
+  
+  reset:function(n){
+    //num=n
+    if(n){
+      this.num=n;
+    } else{
+      this.num=0;
+    }
+  },
+  getCount:function(){
+     this.num
+  }
+ }
+ 
+
+counter.increment(33);
+counter.decrement();
+counter.reset(33);
+counter.getCount();
+  
+console.log(counter.num)
+
+
+  
+
+
+  </script>
+</body>
+</html>
