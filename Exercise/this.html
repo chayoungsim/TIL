@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+  
+  const pikaChu={
+  firstName:'Pika',
+  lastName:'Chu',
+  getPokeName: function() {
+    return this.firstName + ' ' + this.lastName;
+  },
+};
+
+const kobuggi={
+  firstName:'꼬',
+  lastName:'부기',
+  getPokeName: function() {
+    return this.firstName + ' ' + this.lastName;
+  },
+};
+
+
+// 함수에서 this는 window
+var pokemonName = function(snack,hobby){ 
+  return `${this.getPokeName()} loves ${snack} and ${hobby}`
+}
+
+// call(this,인자1,인자2)
+// apply(this,[인자1,인자1])
+ console.log(pokemonName.call(pikaChu,'aaabb','bbb'));
+ console.log(pokemonName.call(kobuggi,'ccc','dddd'))
+ console.log(pokemonName.apply(pikaChu,['eeee','ffff']));
+
+
+
+
+  
+  </script>
+</body>
+</html>

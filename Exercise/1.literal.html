@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+//1. Literal 방식 객체생성
+const person={
+  name:'youngsim',
+  email:'sim22@nate.com',
+  birth:0327,
+  location:'seoul',
+  skills:[],
+  say:function(){
+    return `I am ${this.name} live in ${this.location},study ${this.skills}`
+  },
+  putSkills:function(skill){
+    this.skills.push(skill);
+  },
+  getSkills:function(){
+    return this.skills;
+  }
+} 
+person.putSkills('javascript');
+person.putSkills('vue');
+person.putSkills('react');
+console.log(person.getSkills());
+console.log(person.say())
+
+
+ //2. Constructor Function (생성자 함수 방식)
+function Person(name,email,birth,location){
+  this.name=name;
+  this.email=email;
+  this.birth=birth;
+  this.location=location;
+  this.skills=[];
+}
+Person.prototype.say=function(){
+  return `I am ${this.name} live in ${this.location},study ${this.skills}`
+}
+Person.prototype.putSkills=function(skill){
+  this.skills.push(skill);
+}
+Person.prototype.getSkills=function(){
+  return this.skills;
+}
+const sim = new Person('youngsim','sim22@nate.com','0327','seoul');
+const kim = new Person('sunmi','sun@gmail.com','0508','Japan')
+sim.putSkills('javascript');
+sim.putSkills('vue');
+sim.putSkills('react');
+kim.putSkills('design')
+console.log(sim.say())
+console.log(kim.say())
+  
+//3. class
+class PersonClass{
+  constructor(name,email,birth,location){
+    this.name=name;
+    this.email=email;
+    this.birth=birth;
+    this.location=location;
+    this.skills=[];
+  }
+  say(){
+    return `I am ${this.name} live in ${this.location},study ${this.skills}`
+  }
+  putSkills(skill){
+    this.skills.push(skill);
+  }
+  getSkills(){
+    return this.skills;
+  }
+}
+
+const sim22 = new PersonClass('youngsim','sim22@nate.com','0327','seoul');
+sim22.putSkills('javascript')
+console.log(sim22.say());
+
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+  
+  const pikaChu={
+  firstName:'Pika',
+  lastName:'Chu',
+};
+
+const kobuggi={
+  firstName:'꼬',
+  lastName:'부기',
+};
+
+firstName="young"
+lastName="sim"
+
+// 함수에서 this는 window
+var getPokemon = function(trainer){ 
+  const fullName = this.firstName + this.lastName;
+  return `안녕 ${trainer} 님! 나는 ${fullName} 라고해!!!`
+}
+
+console.log(getPokemon('ys'))
+
+//func.bind(this,'인자') 여러번사용가능 
+const getPikachu =  getPokemon.bind(pikaChu,'sim');
+const getKobuggi =  getPokemon.bind(kobuggi);
+
+console.log(getPikachu());
+console.log(getKobuggi('트레이너 이름'))
+console.log(getKobuggi('youngsim'))
+  
+</script>
+</body>
+</html>
