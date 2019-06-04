@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+
+
+
+
+
+
+  <script>
+    
+document.getElementById("app").innerHTML = `
+<h1>Hello Vanilla!</h1>
+
+<ul class="hello-list">
+  <li class="hello-ele">1</li>
+  <li class="hello-ele">2</li>
+  <li class="hello-ele">3</li>
+  <li class="hello-ele">4</li>
+  <li class="hello-ele">5</li>
+  <li class="hello-ele">6</li>
+</ul>
+`;
+
+//1
+/*
+const $HELLO_LIST = document.querySelector(".hello-list");
+
+$HELLO_LIST.addEventListener("click", function(evt) {
+  console.log(evt.target);
+});
+*/
+
+//2  event delegation 
+// https://poiemaweb.com/js-event
+
+// https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/
+
+
+const $HELLO_LIST = document.querySelector(".hello-list");
+
+$HELLO_LIST.addEventListener("click", function(evt) {
+  const TARGET = evt.target;
+  if (TARGET.nodeName === "UL") {
+    return;
+  }
+  console.log(TARGET);
+});
+
+    
+</script>
+</body>
+</html>
+
+
+

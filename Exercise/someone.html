@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+<div>
+  <form action="" class="form1">
+    <input type="text" name="newName" placeholder="이름">
+    <input type="text" name="email" placeholder="이메일">
+    <input type="text" name="birth" placeholder="생일">
+    <input type="text" name="location" placeholder="사는곳">
+    <button type="submit" class="btnSubmit">submit</button>
+ </form>
+
+  <div class="say"></div>
+</div>
+
+
+
+<script>
+   
+class PersonClass{
+  constructor(name,email,birth,location){
+    this.name=name;
+    this.email=email;
+    this.birth=birth;
+    this.location=location;
+    this.skills=[];
+  }
+  say(){
+    return `I am ${this.name} live in ${this.location},study ${this.skills}`
+  }
+  putSkills(skill){
+    this.skills.push(skill);
+  }
+  getSkills(){
+    return this.skills;
+  }
+}
+
+const FORMACT = document.querySelector('.form1');
+const INPUTS = FORMACT.querySelectorAll('input');
+const SAYS = document.querySelector('.say');
+
+const BTN = FORMACT.querySelector('.btnSubmit');
+
+
+
+console.log(newName);
+
+
+window.onload=function(){
+
+  BTN.addEventListener('submit',function(e){
+
+    const newName = FORMACT.elements['name'].value;
+
+    console.log(e.target.value) 
+    const NEWNAME = e.target.value    
+    const sim=new PersonClass( NEWNAME,'sim22@nate.com','0327','seoul');
+    SAYS.innerHTML=sim.say();
+    
+  })
+  
+  
+
+  
+}
+
+
+/*
+const sim22 = new PersonClass('youngsim','sim22@nate.com','0327','seoul');
+sim22.putSkills('javascript')
+console.log(sim22.say());
+  */  
+    
+</script>
+
+
+</body>
+</html>
