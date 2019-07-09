@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+ <script>
+
+   const startbucks = function(drinks){
+    return new Promise(function(resolve,reject){
+
+      if( drinks === '아메리카노'){
+          resolve('주문하신 아메리카노가 나왔습니다.')
+      } else {
+          reject(Error('주문하신 메뉴가 없습니다.'))
+      }
+    });
+   }
+
+  async function americano(){
+    try {
+       const drink = await startbucks('아메리카노');
+       return drink + 'ㅎㅎ ';
+       
+    } catch(error){
+       console.log(error)
+    }
+  }
+
+
+
+
+
+
+ </script>
+
+</body>
+</html>

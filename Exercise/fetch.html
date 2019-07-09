@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    const fetchData = function() {
+    const xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "https://jsonplaceholder.typicode.com/todos/1", true);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === xhr.DONE && xhr.status === 200) {
+        console.log(xhr.response);
+      }
+    };
+    xhr.send();
+  }
+
+  fetchData();
+  </script>
+
+</body>
+</html>
