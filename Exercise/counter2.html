@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <h2 id="number">0</h2>
+    <div>
+      <button>+1</button>
+      <button>-1</button>
+    </div>
+  </div>
+
+  
+  <script>
+    //parseInt() 함수는 문자열 인자의 구문을 분석해 특정 진수(수의 진법 체계에 기준이 되는 값)의 정수를 반환합니다.
+    const number =  document.getElementById('number');
+    const [increase, decrease] = document.querySelectorAll('button');
+
+    increase.onclick = () =>{
+      const current = parseInt(number.innerText,10);
+      number.innerText= current + 1
+    }
+
+    decrease.onclick = () => {
+      const current = parseInt(number.innerText,10);
+      number.innerText = current - 1;
+    }
+  
+  </script>
+</body>
+</html>
