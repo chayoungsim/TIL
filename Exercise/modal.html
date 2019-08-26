@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .modal-wrapper{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.7);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .modal{
+      width:240px;
+      padding:20px;
+      background:#fff;
+    }
+    .modal-btn-wrapper{
+      text-align:right;
+    }
+  </style>
+</head>
+<body>
+  <h1>제목</h1>
+  <p>내용내용내용</p>
+  <p><button type="button" id="open">모달열기</button></p>
+  <div class="modal-wrapper" style="display:none">
+    <div class="modal">
+      <h2>모달 타이틀</h2>
+      <p>모달 내용 내용</p>
+      <div class="modal-btn-wrapper">
+        <button type="button" id="close">닫기</button>
+      </div>
+    </div>
+  </div>
+  <script>
+   const open = document.getElementById('open');
+   const close = document.getElementById('close');
+   const modal = document.querySelector('.modal-wrapper');
+
+   open.onclick = () =>{
+      modal.style.display='flex';
+   }
+   
+   close.onclick = () =>{
+     modal.style.display='none';
+   }
+
+  </script>
+</body>
+</html>
