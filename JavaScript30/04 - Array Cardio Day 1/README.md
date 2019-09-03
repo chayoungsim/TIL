@@ -32,3 +32,5 @@ console.log(array1); // expected output: Array [1, 2, 3, 4, 5]
 ### splice() : 메서드는 배열의 기존 요소를 삭제 또는 교체 하거나 새 요소를 추가여 배열의 내용을 변경합니다.
 
 ### split() : 메서드는 String 객체를 지정한 구분자를 이용하여 여러 개의 문자열로 나눕니다.
+
+### Array.form() : 메서드는 유사 배열 객체(array-like object)나 반복 가능한 객체(iterable object)를 얕게 복사해 새로운 Array 객체를 만듭니다.
