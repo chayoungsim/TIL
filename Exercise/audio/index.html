@@ -70,6 +70,42 @@
       crossorigin="anonymous"></script>
     <script>
       // 여기에 코드를 입력하세요.
+      var loop = new Audio('audio/loop.mp3') 
+      $('#play-btn').on('click',function(){
+        loop.play();
+      });
+
+      $('#stop-btn').on('click',function(){
+        loop.pause();
+        currentTime=0;
+      });
+
+      audioFiles =[];
+      audioFiles.push(new Audio('audio/01_kick_drum.wav'));     
+      audioFiles.push(new Audio('audio/02_closed_hihat.wav'));
+      audioFiles.push(new Audio('audio/03_open_hihat.wav'));
+      audioFiles.push(new Audio('audio/04_clap.wav'));
+      audioFiles.push(new Audio('audio/05_snap.wav'));
+      audioFiles.push(new Audio('audio/06_crash.wav'));
+      audioFiles.push(new Audio('audio/07_tom1.wav'));
+      audioFiles.push(new Audio('audio/08_tom2.wav'));
+      audioFiles.push(new Audio('audio/09_tambourine.wav'));      
+ 
+      $(document).on('keydown', function(event) {
+        var idx = Number(event.key);
+        if(idx>=1 && idx<=9){
+          $('#cell'+idx).addClass('playing');
+          var current = audioFiles[idx-1]
+          current.currentTime=0;
+          current.play();
+        }
+      })
+
+      $(document).on('keyup', function(event) {        
+        $('.cell').removeClass('playing');
+      })
+     
+
     </script>
   </body>
 </html>
