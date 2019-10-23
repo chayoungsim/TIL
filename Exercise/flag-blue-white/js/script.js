@@ -5,28 +5,21 @@ $(function(){
 });
 
 function blueFlagDown(){    
-   $('.blue').not('.dot').css({'transform' : 'rotate(45deg)'}); 
-   setTimeout(blueFlagUp,1000)
+   $('.blue').addClass('down');
+   setTimeout(flagReset,1000)
 }
 
-function blueFlagUp(){
-  $('.blue').not('.dot').css({'transform' : 'rotate(0)'});
-}
 
 function whiteFlagDown(){  
-  $('.white').css({'transform':'rotate(45deg'});
-  setTimeout(whiteFlagUp,1000)
-}
-
-function whiteFlagUp(){  
-  $('.white').css({'transform':'rotate(0)'});
+  $('.white').addClass('down');
+  setTimeout(flagReset,1000)
 }
 
 function dotBlueDown(){
-  $('.blue.dot').css({'transform':'rotate(45deg'});
-  setTimeout(dotBlueUp,1000)
+  $('.blue.dot').addClass('down');
+  setTimeout(flagReset,1000)
 }
 
-function dotBlueUp(){
-  $('.blue.dot').css({'transform':'rotate(0)'});
+function flagReset(){
+  $('.flag').removeClass('down')
 }
